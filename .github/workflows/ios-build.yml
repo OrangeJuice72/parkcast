@@ -1,0 +1,22 @@
+name: Build iPhone sideload package
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test core and build ARM64 iPhone app
+        run: bash scripts/build-ipa.sh
+      - name: Upload unsigned IPA for local signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: ParkCast-unsigned-iphone
+          path: |
+            dist/ParkCast-unsigned.ipa
+            dist/ParkCast-unsigned.ipa.sha256
+          if-no-files-found: error
+          retention-days: 3
