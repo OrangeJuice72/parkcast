@@ -5,8 +5,8 @@ from zipfile import ZipFile, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parents[1]
 destination = ROOT / "dist/ParkCast-source.zip"
 destination.parent.mkdir(exist_ok=True)
-files = [ROOT / name for name in ["README.md", "TESTING.md", "Package.swift", ".gitignore"]]
-for folder in ["ParkCast", "Sources", "Tests", "Config", "ParkCast.xcodeproj", "scripts"]:
+files = [ROOT / name for name in ["README.md", "TESTING.md", "SIDELOAD.md", "Package.swift", ".gitignore", ".gitattributes"]]
+for folder in ["ParkCast", "Sources", "Tests", "Config", "ParkCast.xcodeproj", "scripts", ".github", "try"]:
     files.extend(p for p in (ROOT / folder).rglob("*")
                  if p.is_file() and "__pycache__" not in p.parts and "xcuserdata" not in p.parts)
 with ZipFile(destination, "w", ZIP_DEFLATED) as archive:

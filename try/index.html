@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c1113">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ParkCast Test">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/style.css">
+  <title>ParkCast · iPhone test</title>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/" aria-label="ParkCast home"><span class="brand-icon">▷</span> PARKCAST</a><span class="tag">IPHONE TEST</span></header>
+    <section class="hero">
+      <div class="eyebrow">A LITTLE PAUSE. A BIGGER SCREEN.</div>
+      <h1>Let’s try your<br>car’s display.</h1>
+      <p>Start with a known video. Then choose an AirPlay display while parked.</p>
+      <button id="test" class="primary">▶ &nbsp; Play the test video</button>
+      <p class="micro">Free Safari test · no account · no uploads</p>
+    </section>
+
+    <section class="player-card" aria-labelledby="player-title">
+      <div class="section-heading"><h2 id="player-title">Test player</h2><span id="playback-state" class="tag">READY</span></div>
+      <div class="video-wrap"><video id="video" controls playsinline webkit-playsinline x-webkit-airplay="allow" preload="none" aria-label="Video test player"></video><div id="empty-player"><span>▷</span><p>Your video will appear here</p></div></div>
+      <p id="message" role="status" aria-live="polite">Open this page in Safari on your iPhone to test AirPlay.</p>
+      <button id="airplay" class="secondary">Choose AirPlay display</button>
+      <p class="micro">A wireless audio connection does not confirm that the truck can display video.</p>
+      <button id="stop" class="text-button">Stop playback</button>
+    </section>
+
+    <section class="section">
+      <h2>Bring your own video</h2>
+      <p>Use a direct HTTPS video link, such as an MP4 or HLS stream.</p>
+      <form id="url-form"><label for="video-url">Video URL</label><div class="input-row"><input id="video-url" type="url" placeholder="https://example.com/video.mp4" autocomplete="off" autocapitalize="none" spellcheck="false" required><button type="submit" aria-label="Play video link">→</button></div></form>
+      <label class="file-button" for="local-video">＋ &nbsp; Open a video from your iPhone</label><input type="file" id="local-video" accept="video/*">
+      <p class="micro">Selected files stay on your phone. Casting local files depends on iOS and the receiver.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><h2>Your services</h2><span class="tag">OPEN IN SAFARI</span></div>
+      <div class="services"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><strong class="youtube">▶</strong><span>YouTube</span></a><a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer"><strong class="netflix">N</strong><span>Netflix</span></a><a href="https://www.disneyplus.com" target="_blank" rel="noopener noreferrer"><strong class="disney">D+</strong><span>Disney+</span></a></div>
+      <p class="micro">These open the actual services, not a mirrored window. Their sign-in and external playback rules still apply. Netflix does not support iPhone AirPlay.</p>
+    </section>
+
+    <section class="section diagnostics">
+      <h2>What your browser reports</h2>
+      <dl><div><dt>Secure connection</dt><dd id="secure">Checking…</dd></div><div><dt>AirPlay picker API</dt><dd id="picker">Checking…</dd></div><div><dt>Native HLS playback</dt><dd id="hls">Checking…</dd></div><div><dt>Wireless media route</dt><dd id="wireless">Not active</dd></div></dl>
+      <p class="micro">Safari cannot verify the picture on your car screen or identify whether the vehicle allows video. Check the display itself.</p>
+      <button id="copy" class="secondary">Copy test results</button>
+    </section>
+
+    <section class="section install">
+      <span class="eyebrow">THE NATIVE APP</span><h2>Sideload when you’re back.</h2>
+      <p>This page is a browser test. It is not the native app and does not add an icon to CarPlay.</p>
+      <p id="build-status">Checking native build availability…</p>
+      <a id="ipa" class="secondary" href="/download/ParkCast-unsigned.ipa" hidden>Download unsigned iPhone IPA</a>
+      <ol><li>Download the iPhone IPA once it is ready.</li><li>At your PC, connect and unlock your iPhone by USB.</li><li>Use <a href="https://sideloadly.io/" target="_blank" rel="noopener noreferrer">Sideloadly</a> to sign and install it with your own Apple account.</li></ol>
+      <p class="micro">An unsigned IPA cannot install directly from Safari. Free-account signing expires after 7 days and needs refreshing. Apple credentials belong only in your chosen signing tool.</p>
+    </section>
+    <footer>No subscription. No additional hardware.<br>Keep your PC awake and Tailscale connected.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

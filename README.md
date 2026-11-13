@@ -2,6 +2,8 @@
 
 A native iPhone video browser and AirPlay player, built as a subscription-free starting point for watching while parked. No paywall, purchases, tracking SDK, server, or third-party runtime dependencies.
 
+**Windows / remote iPhone testing:** see [SIDELOAD.md](SIDELOAD.md). A separate private Safari test player is included under `try/`; the native app itself does not need that server. The manual GitHub Actions workflow can compile an unsigned iPhone IPA for local signing, so owning a Mac is not required if you use a cloud macOS builder.
+
 **Status: prototype source, not a signed/installable iPhone download.** Written on Windows. Project structure and Swift syntax have been checked; Apple SDK compilation, Swift unit tests, and phone/car playback have **not** been run. The user's 2025 GMC Sierra Denali 2500 HD has not been verified as a video-capable destination. This is not a claim that Netflix, Disney+, or YouTube will play on that screen.
 
 ## What is implemented
