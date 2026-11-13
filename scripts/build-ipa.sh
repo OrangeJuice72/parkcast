@@ -14,7 +14,7 @@ xcodebuild -project ParkCast.xcodeproj -scheme ParkCast \
   CODE_SIGN_IDENTITY='' build
 app_path="$PWD/build/Device/Build/Products/Release-iphoneos/ParkCast.app"
 test -f "$app_path/ParkCast"
-xcrun lipo -verify_arch arm64 "$app_path/ParkCast"
+xcrun lipo "$app_path/ParkCast" -verify_arch arm64
 mkdir -p dist
 ipa_output="$PWD/dist/ParkCast-unsigned.ipa"
 payload_root="$(mktemp -d "$PWD/build/payload.XXXXXX")"
