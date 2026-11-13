@@ -4,7 +4,7 @@ A native iPhone video browser and AirPlay player, built as a subscription-free s
 
 **Windows / remote iPhone testing:** see [SIDELOAD.md](SIDELOAD.md). A separate private Safari test player is included under `try/`; the native app itself does not need that server. The manual GitHub Actions workflow can compile an unsigned iPhone IPA for local signing, so owning a Mac is not required if you use a cloud macOS builder.
 
-**Status: prototype source, not a signed/installable iPhone download.** Written on Windows. Project structure and Swift syntax have been checked; Apple SDK compilation, Swift unit tests, and phone/car playback have **not** been run. The user's 2025 GMC Sierra Denali 2500 HD has not been verified as a video-capable destination. This is not a claim that Netflix, Disney+, or YouTube will play on that screen.
+**Status: compiled prototype with an unsigned iPhone IPA.** The [macOS build](https://github.com/OrangeJuice72/parkcast/actions/runs/43481905010) passed all nine Swift tests, compiled the standard ARM64 iPhone Release target, and packaged the IPA. It still needs personal signing and installation; native phone/car playback has not been tested. The user's Safari test with the 2025 GMC Sierra Denali 2500 HD produced **audio only**. The native prototype also uses AirPlay, so it may have the same limitation. This is not a claim that Netflix, Disney+, or YouTube will play on that screen. The optional CarPlay target was not compiled or verified by this build.
 
 ## What is implemented
 

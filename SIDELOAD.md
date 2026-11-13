@@ -7,6 +7,8 @@ There are two different test paths:
 
 ## Native build
 
+The [first successful device build](https://github.com/OrangeJuice72/parkcast/actions/runs/43481905010) passed all nine Swift tests and produced an unsigned ARM64 iPhone IPA. Download the workflow's `ParkCast-unsigned-iphone` artifact while it is retained, or dispatch a new build. Extract the ZIP to obtain `ParkCast-unsigned.ipa`.
+
 The manual GitHub Actions workflow `.github/workflows/ios-build.yml` runs the Swift core tests, compiles the ordinary ParkCast device target, and uploads `ParkCast-unsigned.ipa` for local signing. It needs no Apple credentials or signing secrets. It does not build the entitlement-restricted CarPlay target.
 
 The workflow runs only when dispatched. Private repositories can consume included Actions usage and incur charges beyond it; standard hosted runners in public repositories are free. Do not publish this source publicly without the owner's approval.
@@ -32,7 +34,7 @@ For Sideloadly:
 
 The vendor supports free Apple accounts with 7-day signing validity; automatic refreshing still requires the relevant PC/device connectivity. A first-time remote installation is not promised. If AltStore/SideStore is already installed and configured on the phone, its existing workflow may provide another installation path.
 
-Downloading an unsigned IPA in Safari cannot install it. The optional CarPlay entitlement is not granted by using a sideloading tool. Netflix/Disney+ compatibility and the Sierra's video support remain unverified.
+Downloading an unsigned IPA in Safari cannot install it. The optional CarPlay entitlement is not granted by using a sideloading tool. The Sierra's Safari test produced audio only; native playback remains untested and may have the same limitation. Netflix/Disney+ compatibility remains unverified.
 
 ## Private Safari test server
 
